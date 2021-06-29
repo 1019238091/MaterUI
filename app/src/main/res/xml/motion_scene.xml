@@ -1,14 +1,35 @@
-<?xml version ="1.0" encoding ="utf-8"?><!--  Learn More about how to use App Actions: https://developer.android.com/guide/actions/index.html -->
-<actions>
-    <!--    Example Action -->
-    <!--    <action intentName="Intent name (actions.intent.*)"> -->
-    <!--        <action-display -->
-    <!--            icon="@mipmap/..." -->
-    <!--            labelTemplate="@array/..." /> -->
-    <!--        <fulfillment urlTemplate="Action content URI or URL"> -->
-    <!--            <parameter-mapping -->
-    <!--                intentParameter="Parameter name in Intent URI" -->
-    <!--                urlParameter="Parameter name in URL" /> -->
-    <!--        </fulfillment> -->
-    <!--    </action> -->
-</actions>
+<?xml version ="1.0" encoding ="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/desc_view"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/avatar_view"/>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@id/desc_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/avatar_view" />
+    </ConstraintSet>
+
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@+id/start"
+        app:duration="200"
+        app:motionInterpolator="easeInOut">
+        <OnClick
+            app:clickAction="toggle"
+            app:targetId="@id/fold_view" />
+    </Transition>
+
+</MotionScene>

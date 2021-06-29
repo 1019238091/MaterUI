@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ShowMaterUI</string>
+    <string name="title">标题</string>
+    <string name="desc">加菲猫</string>
+    <string name="collapse">收起</string>
+    <string name="fold">展开</string>
+</resources>
